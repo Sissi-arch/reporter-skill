@@ -1,5 +1,60 @@
 # reporter-skill
 automatic reporter-demo
-1. Just drag the system materials middle-platform weekly report Excel into the AI chat, and it can automatically generate PNG*4 weekly reports: png-- weekly report visualization chart (with conditional formatting highlights) animated png-- animated TOP & BOTTOM case list chart film & TV shows png-- film & TV shows except TOP & BOTTOM case list chart documentary.png-- documentary TOP & BOTTOM case list chart
+# 📊 周报全套四图 Skill (Weekly Report AI Skill)
 
-2. The pivot table conditions I set up for the skill are: 1.1 For numeric data: use color bars, the larger the value, the longer the color bar; 1.2 For change-type data: positive is green, negative is red, the larger the absolute value, the deeper the color; 1.3 For percentages: the higher, the closer to positive red, the closer to 0%, use positive blue.
+一个 AI 自动化技能（Skill）：只需将「物料中台周报」Excel 拖入对话，一句话即可自动生成四张高度可视化的数据图表。将原本繁琐枯燥的 **30 分钟** 手工制表时间，极限压缩至 **5 分钟** 内！
+
+## 💡 项目背景 (Background)
+在数据运营与内容复盘的日常工作中，周报制作往往耗费大量人工时间。尤其是针对长视频平台（如 B 站）的复杂数据，需要人工筛选、分析 Top/Bottom Case，并进行繁琐的条件格式高亮（如正负向颜色区分、数据条等）。
+
+**本项目解决的痛点：**
+- **提效降本**：彻底告别复制粘贴和手工画图，将单次周报制作时间从 **30 分钟缩短至 5 分钟**，提效超 80%。
+- **标准化输出**：通过预设的数据透视条件，自动完成颜色高亮（正向为绿，负向为红，绝对值越大颜色越深），避免人工操作失误，保证数据呈现的专业度与一致性。
+- **多维度拆解**：一键按品类（动画、影剧综、纪录片）生成独立的 TOP/BOTTOM 列表图，清晰定位问题。
+
+## ⚙️ 核心功能 (Core Features)
+该 Skill 内置了数据清洗、格式化与绘图逻辑，能够自动解析 Excel 并输出以下 4 张 PNG 图片至同一文件夹：
+- `周报.png`：周报数据全景可视化图（自动应用条件格式高亮）。
+- `动画.png`：动画品类 TOP & BOTTOM Case 列表图。
+- `影剧综.png`：影剧综品类 TOP & BOTTOM Case 列表图。
+- `纪录片.png`：纪录片品类 TOP & BOTTOM Case 列表图。
+
+**内置数据透视与高亮规则：**
+1. **数值类型数据**：使用色条（Data Bars），数值越大色条越长。
+2. **变化类数据**：正数为绿色，负数为红色，绝对值越大颜色越深。
+3. **百分比类型**：越接近正红色（接近 0%）使用正蓝色。
+
+## 🚀 快速开始 (Quick Start)
+
+### 前置条件
+- 电脑已安装并登录 **Bitto**（需有 Bitto 账号）。
+- 无需单独安装 Python 环境（Bitto 已内置运行环境）。
+- 需要联网（生成图表时需在线下载 B 站封面缩略图）。
+
+### 安装步骤
+1. 下载本仓库的压缩包并解压，得到文件夹 `weekly-report-full`。
+2. 将整个 `weekly-report-full` 文件夹复制到你的 Bitto 插件目录：
+   `C:\Users\<你的用户名>\.bitto\plugins\`
+   *(注：`<你的用户名>` 请替换为你电脑实际登录的用户名。找不到目录可在文件资源管理器地址栏输入 `%USERPROFILE%\.bitto\plugins` 回车)*
+3. **完全退出 Bitto**（注意：托盘图标也要右键退出）后重新打开，加载插件。
+4. 安装完成！
+
+### 使用方法
+1. 在 Bitto 对话中，直接拖入「物料中台周报」的 `.xlsx` 文件。
+2. 发送指令：**“生成周报全套”**。
+3. Bitto 将自动处理数据，并在 Excel 同目录下生成一个名为 `周报全套_日期` 的文件夹，内含 4 张生成的图片。
+
+## 🖼️ 效果展示 (Demo & Screenshots)
+
+*(这里强烈建议配上你在附件中提供的截图)*
+
+![周报自动生成效果展示](附件图片的链接地址)
+
+> **对比**：过去需要人工核对数据、调整格式、截图排版，耗时约 30 分钟；现在交由 AI Skill 自动处理，仅需 5 分钟即可输出结构清晰、高亮标准统一的业务图表。
+
+## 🛠️ 进阶与定制 (Customization)
+如果业务需求变化，你可以直接向 AI 助手提出修改要求（例如：“修改某列的阈值”或“增加一个新的数据卡片”）。
+*💡 优化技巧*：由于 AI 无法一次性完美理解极其复杂的定制需求，建议在给出 Prompt 前，先手动整理好你的数据逻辑和期望的可视化样式，以此让 AI 帮你优化并生成最终的代码/Skill 逻辑。
+
+---
+*本项目为个人实习期间开发的提效工具，用于展示 AI 工作流在数据分析与自动化报表领域的应用潜力。*
