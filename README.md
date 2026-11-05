@@ -46,9 +46,7 @@ automatic reporter-demo
 
 ## 🖼️ 效果展示 (Demo & Screenshots)
 
-*(这里强烈建议配上你在附件中提供的截图)*
-
-![周报自动生成效果展示](附件图片的链接地址)
+![周报自动生成效果展示](附件图片的链接地址<img width="2508" height="2076" alt="周报预览版_1001-1007" src="https://github.com/user-attachments/assets/11fbdb0b-105d-4d50-9a33-07157a49fa94" />)
 
 > **对比**：过去需要人工核对数据、调整格式、截图排版，耗时约 30 分钟；现在交由 AI Skill 自动处理，仅需 5 分钟即可输出结构清晰、高亮标准统一的业务图表。
 
